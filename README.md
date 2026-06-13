@@ -8,7 +8,7 @@ Enterprise-grade AI Tool Calling Platform powered by LoRA Fine-Tuned Models, Fas
 
 AI Tool Orchestrator is a production-style AI system that intelligently routes user requests to the appropriate tool, executes the tool, collects analytics, and provides a modern enterprise dashboard.
 
-Instead of using rule-based applications, this project combines:
+This project combines:
 
 * LoRA Fine-Tuned Language Models
 * Tool Calling Architecture
@@ -55,8 +55,6 @@ LoRA Fine-Tuned Model predicts:
 }
 ```
 
-instead of relying solely on regex-based routing.
-
 Supported tools:
 
 | Tool         | Description              |
@@ -74,13 +72,7 @@ Supported tools:
 
 ### OpenWeather API
 
-Provides:
-
-* Temperature
-* Humidity
-* Weather Conditions
-
-Example:
+Provides temperature, humidity, and weather conditions.
 
 ```json
 {
@@ -90,36 +82,13 @@ Example:
 }
 ```
 
----
-
 ### Gmail SMTP
 
-Sends actual emails using:
-
-* Gmail App Password
-* SMTP SSL
-
-Example:
-
-```text
-To: user@gmail.com
-Subject: Test Mail
-
-Hello from AI Tool Orchestrator
-```
-
----
+Sends actual emails using Gmail App Password and SMTP SSL.
 
 ### OpenRouteService API
 
-Provides:
-
-* Distance Calculation
-* Route Planning
-* ETA Estimation
-* Fare Calculation
-
-Example:
+Provides distance calculation, route planning, ETA estimation, and fare calculation.
 
 ```json
 {
@@ -144,15 +113,11 @@ Tracks:
 * Unique Tools Used
 * Tool Usage Statistics
 
-Stored in:
+Data is stored in SQLite database:
 
 ```text
-SQLite Database
 tool_calls.db
 ```
-
-
-
 
 ---
 
@@ -179,10 +144,6 @@ Streamlit
 
 ## 🐳 Docker Support
 
-Containerized Deployment
-
-Supports:
-
 ```bash
 docker compose up --build
 ```
@@ -196,8 +157,6 @@ Services:
 
 ## 🧠 LoRA Fine-Tuning Pipeline
 
-Training Pipeline:
-
 ```text
 Dataset
    ↓
@@ -210,8 +169,6 @@ DPO Fine-Tuning
 Inference API
 ```
 
-Models Compared:
-
 | Model     | Accuracy |
 | --------- | -------- |
 | Base GPT2 | 72%      |
@@ -222,64 +179,13 @@ Models Compared:
 
 # 🏗️ System Architecture
 
-```text
-+---------------------+
-| Streamlit Frontend  |
-| Port : 7500         |
-+----------+----------+
-           |
-           |
-           v
-+---------------------+
-| FastAPI Backend     |
-| Port : 7600         |
-+----------+----------+
-           |
-           |
-           v
-+---------------------+
-| LoRA Tool Router    |
-+----------+----------+
-           |
-   -----------------------
-   |     |      |       |
-   v     v      v       v
-
-Weather  Email  Cab   Hotel
- API     SMTP   API   Mock
-```
+<img width="1536" height="1024" alt="System Architecture" src="https://github.com/user-attachments/assets/4df2da30-1685-4424-bb09-bcda50e73649" />
 
 ---
 
 # 📂 Project Structure
 
-```text
-LoRA-Fine-Tuning-Project
-│
-├── api
-│   └── server.py
-│
-├── app
-│   └── streamlit_app.py
-│
-├── model
-│   └── inference.py
-│
-├── pages
-│   ├── 3_Monitoring.py
-│   └── 4_Model_Comparison.py
-│
-├── data
-├── outputs
-├── reports
-│
-├── Dockerfile
-├── docker-compose.yml
-├── requirements.txt
-├── README.md
-├── .env
-└── tool_calls.db
-```
+<img width="1536" height="1024" alt="Project Structure" src="https://github.com/user-attachments/assets/c4cf4bc6-935e-4170-bd55-29fb4a856569" />
 
 ---
 
@@ -288,22 +194,16 @@ LoRA-Fine-Tuning-Project
 ## Clone Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/ai-tool-orchestrator.git
-
+git clone https://github.com/Ganesh0181/ai-tool-orchestrator.git
 cd ai-tool-orchestrator
 ```
-
----
 
 ## Create Virtual Environment
 
 ```bash
 python -m venv venv
-
 venv\Scripts\activate
 ```
-
----
 
 ## Install Requirements
 
@@ -311,24 +211,15 @@ venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
----
-
 ## Configure Environment Variables
 
-Create:
-
-```text
-.env
-```
+Create a `.env` file:
 
 ```env
 JWT_SECRET=your_secret_key
-
 OPENWEATHER_API_KEY=your_key
-
 SMTP_EMAIL=your_email@gmail.com
 SMTP_PASSWORD=your_app_password
-
 ORS_API_KEY=your_openrouteservice_key
 ```
 
@@ -342,13 +233,11 @@ ORS_API_KEY=your_openrouteservice_key
 python -m uvicorn api.server:app --reload --port 7600
 ```
 
-API:
+API Docs:
 
 ```text
 http://localhost:7600/docs
 ```
-
----
 
 ## Frontend
 
@@ -366,83 +255,46 @@ http://localhost:7500
 
 # 📸 Screenshots
 
-## Login Page
-<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/8b3ed798-f686-4ed7-9dbb-4d5df01b3bc0" />
+## 1. Login Page
 
-
-Add Screenshot:
-
-```text
-screenshots/login.png
-```
+<img width="1536" height="1024" alt="Login Page" src="https://github.com/user-attachments/assets/8b3ed798-f686-4ed7-9dbb-4d5df01b3bc0" />
 
 ---
 
-## Dashboard
-<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/f7064b28-9c3e-4162-9fd5-9a6bb14608dc" />
+## 2. Dashboard
 
-
-Add Screenshot:
-
-```text
-screenshots/dashboard.png
-```
+<img width="1536" height="1024" alt="Dashboard" src="https://github.com/user-attachments/assets/f7064b28-9c3e-4162-9fd5-9a6bb14608dc" />
 
 ---
 
-## Cab Booking
-<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/bc80e1bc-db80-4b75-b020-fcd52931aaf6" />
+## 3. Cab Booking
 
-
-Add Screenshot:
-
-```text
-screenshots/cab.png
-```
+<img width="1536" height="1024" alt="Cab Booking" src="https://github.com/user-attachments/assets/bc80e1bc-db80-4b75-b020-fcd52931aaf6" />
 
 ---
 
-## Weather Tool
-<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/0b0e78a1-f55e-44ab-baa2-29d47597c213" />
+## 4. Weather Tool
 
-
-Add Screenshot:
-
-```text
-screenshots/weather.png
-```
+<img width="1536" height="1024" alt="Weather Tool" src="https://github.com/user-attachments/assets/0b0e78a1-f55e-44ab-baa2-29d47597c213" />
 
 ---
 
-## Email Tool
-<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/0121da1c-7481-4195-ba5f-9d2c58d56c98" />
+## 5. Email Tool
 
-
-
-Add Screenshot:
-
-```text
-screenshots/email.png
-```
+<img width="1536" height="1024" alt="Email Tool" src="https://github.com/user-attachments/assets/0121da1c-7481-4195-ba5f-9d2c58d56c98" />
 
 ---
 
-## Monitoring Dashboard
-<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/604494d4-b185-4a93-869a-c17a170c6ddd" />
+## 6. Monitoring Dashboard
 
-
-Add Screenshot:
-
-```text
-screenshots/monitoring.png
-```
+<img width="1536" height="1024" alt="Monitoring Dashboard" src="https://github.com/user-attachments/assets/604494d4-b185-4a93-869a-c17a170c6ddd" />
 
 ---
 
 # 🎯 Resume Highlights
 
-* Developed Enterprise AI Tool Calling Platform using FastAPI, Streamlit and LoRA Fine-Tuning.
-* Integrated JWT Authentication, OpenWeather API, Gmail SMTP and OpenRouteService.
+* Developed Enterprise AI Tool Calling Platform using FastAPI, Streamlit, and LoRA Fine-Tuning.
+* Integrated JWT Authentication, OpenWeather API, Gmail SMTP, and OpenRouteService.
 * Built analytics dashboard with SQLite logging and monitoring features.
 * Implemented multi-tool execution pipeline with confidence scoring and feedback collection.
 * Containerized deployment using Docker and automated workflows using GitHub Actions.
@@ -451,33 +303,33 @@ screenshots/monitoring.png
 
 # 🛠️ Tech Stack
 
-### Frontend
+## Frontend
 
 * Streamlit
 
-### Backend
+## Backend
 
 * FastAPI
 * Uvicorn
 
-### AI
+## AI
 
 * Transformers
 * PEFT
 * LoRA
 * DPO
 
-### Database
+## Database
 
 * SQLite
 
-### APIs
+## APIs
 
 * OpenWeather
 * Gmail SMTP
 * OpenRouteService
 
-### DevOps
+## DevOps
 
 * Docker
 * GitHub Actions
@@ -490,6 +342,6 @@ S. Ganesh
 
 B.Tech – Artificial Intelligence & Machine Learning
 
-GitHub: https://github.com/YOUR_USERNAME
+GitHub: https://github.com/Ganesh0181
 
-LinkedIn: https://linkedin.com/in/YOUR_PROFILE
+LinkedIn: https://www.linkedin.com/in/ganesh-chary-sanugondla-14b14133b
