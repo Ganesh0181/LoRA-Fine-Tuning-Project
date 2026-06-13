@@ -1,0 +1,14 @@
+torch
+transformers
+datasets
+peft
+trl
+accelerate
+pandas
+tqdm
+scikit-learn
+matplotlib
+fastapi
+uvicorn
+streamlit
+requests
