@@ -151,6 +151,9 @@ SQLite Database
 tool_calls.db
 ```
 
+
+
+
 ---
 
 ## 📈 Monitoring Dashboard
@@ -364,6 +367,8 @@ http://localhost:7500
 # 📸 Screenshots
 
 ## Login Page
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/8b3ed798-f686-4ed7-9dbb-4d5df01b3bc0" />
+
 
 Add Screenshot:
 
@@ -374,6 +379,8 @@ screenshots/login.png
 ---
 
 ## Dashboard
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/f7064b28-9c3e-4162-9fd5-9a6bb14608dc" />
+
 
 Add Screenshot:
 
@@ -384,6 +391,8 @@ screenshots/dashboard.png
 ---
 
 ## Cab Booking
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/bc80e1bc-db80-4b75-b020-fcd52931aaf6" />
+
 
 Add Screenshot:
 
@@ -394,6 +403,8 @@ screenshots/cab.png
 ---
 
 ## Weather Tool
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/0b0e78a1-f55e-44ab-baa2-29d47597c213" />
+
 
 Add Screenshot:
 
@@ -404,6 +415,9 @@ screenshots/weather.png
 ---
 
 ## Email Tool
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/0121da1c-7481-4195-ba5f-9d2c58d56c98" />
+
+
 
 Add Screenshot:
 
@@ -414,6 +428,8 @@ screenshots/email.png
 ---
 
 ## Monitoring Dashboard
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/604494d4-b185-4a93-869a-c17a170c6ddd" />
+
 
 Add Screenshot:
 
